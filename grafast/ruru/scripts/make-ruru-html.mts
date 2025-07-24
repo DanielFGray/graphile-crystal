@@ -13,12 +13,16 @@ const html =
 <!-- DELETE THIS once you have the correct 'endpoint' in RURU_CONFIG above -->
 <script type="module">
 // Extract 'endpoint=...' from the hash params
-const { hash } = window.location;
-if (hash.startsWith('#')) {
-const params = new URLSearchParams(window.location.hash.slice(1));
-const endpoint = params.get('endpoint');
-if (endpoint) RURU_CONFIG.endpoint = endpoint;
+function setEndpointConfig() {
+  const { hash } = window.location;
+  if (hash.startsWith('#')) {
+    const params = new URLSearchParams(window.location.hash.slice(1));
+    const endpoint = params.get('endpoint');
+    if (endpoint) RURU_CONFIG.endpoint = endpoint;
+  }
 }
+setEndpointConfig()
+window.addEventListener('hashchange', setEndpointConfig);
 </script>
 <!-- /DELETE THIS -->
 `;

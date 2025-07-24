@@ -173,6 +173,13 @@
     column-gap: var(--px-8);
   }
 
+  .graphiql-query-editor {
+    border-top: 1px solid
+      hsla(var(--color-neutral), var(--alpha-background-heavy));
+    border-right: 1px solid
+      hsla(var(--color-neutral), var(--alpha-background-heavy));
+  }
+
   .graphiql-session-header,
   #graphiql-session {
     padding: 0;
